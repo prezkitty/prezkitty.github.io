@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrezKitty</title>
+    <style>
+        /* Reset Default Margins and Padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full-Page Setup */
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Banner Container */
+		#banner {
+			width: 100%;
+			height: 100vh; /* Full viewport height */
+			position: relative; /* Allows absolute positioning inside */
+			overflow: hidden;
+			background-image: url(images/prezkitty.png); /* Repeat the background */
+			background-size: 500px 600px; /* Set repeat tile size */
+			background-repeat: repeat; /* Repeat horizontally and vertically */
+			background-position: top left;
+		}
+
+
+        /* Text Overlay */
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centers the text */
+            color: white;
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+            border-radius: 10px;
+			font-size: 1.25rem;
+			line-height: 1.2;
+			width: 62%;
+        }
+
+		.large-text {
+			font-size: 1.5rem; /* Adjust to make a certain word larger */
+			font-weight: bold; /* Optional: Make it bold */
+		}
+		
+        /* Optional: Responsive Text */				
+		.overlay-text h1 {
+					font-size: 3rem;
+					margin-bottom: 10px;
+				}
+				
+		/* Body Text Section */
+        .body-content {
+            background-color: #f9f9f9;
+            padding: 50px;
+            text-align: center;
+        }
+		
+	    .body-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+		.body-content h3 {
+					font-size: 1.5rem;
+					margin-bottom: 20px;
+				}
+        .body-content p {
+            font-size: 1.25rem;
+            line-height: 1.5;
+        }
+		
+		/* Container for the banner */
+	    .image-banner {
+            display: flex;
+            justify-content: center; /* Centers images */
+            align-items: center;
+            gap: 10px; /* Space between images */
+            padding: 10px;
+            background-color: #34425D; /* Optional background color */
+        }
+
+        /* Image styling */
+        .image-banner img {
+            width: 300px; /* Set fixed width */
+            height: 300px; /* Set fixed height */
+            object-fit: cover; /* Ensures the image fills the area without distortion */
+            border-radius: 5px; /* Optional rounded corners */
+        }
+		
+		/* Ensure the image-container is positioned correctly */
+		.image-container {
+			position: relative;
+			display: inline-block; /* Ensures images stay in line */
+		}
+
+		/* Hidden text overlay */
+        .image-container .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Show text on hover */
+        .image-container:hover .hover-text {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner Section with Background Image and Overlay Text -->
+    <div id="banner">
+        <div class="overlay-text">
+            <h1>Prezident Kitty's<p></p>
+			Tips On Being A Good Kitty</h1><br></br>
+            <span class="large-text">THINK:</span> Don't Let Other Kitties Think For You, Especially Bad Kitties<br></br>
+			<span class="large-text">TRUST SELECTIVELY:</span> If A Person Smells Fishy, They Probably Are<br></br>
+			<span class="large-text">STAY CURIOUS:</span> A Kitty Who Thinks They Know Everything Knows Nothing<br></br>
+			<span class="large-text">DON'T NAMECALL:</span> Kitties Who Catcall Are No Cat At All<br></br>
+			<span class="large-text">REMEMBER WHO YOU ARE:</span> We're All <i>Felis catus</i>; Treat All Cats Equally<br></br>
+        </div>
+    </div>
+	
+    <!-- Body Content Section -->
+    <div class="body-content">
+        <h2>A simple purrpose</h2>
+        <p>A reminder for the lesser species, humans, to use their brain with purpose, recognize baddies, and build togetherness. </p>
+    </div>
+	
+	<div class="body-content" style="text-align: center;">
+	  <h2>Meow</h2> 
+	  <div class="image-container" >
+		<a href="https://www.youtube.com/watch?v=AooM9y1sANw" target="_blank">
+		  <img src="images/cathat.png" alt="A presidential cat wearing a wizard hat sitting next to a pumpkin." style="width: 300px; height: auto;">
+		  <div class="hover-text">Click to Play with Kitty!</div>
+		</a>
+	  </div>
+	</div>
+	
+	<div class="body-content">
+		<h3>We, the undersigned, adamantly express our support and urge betterment of human overloads. </h3>
+		<div class="image-banner">
+			<div class="image-container">
+				<img src="images/pets/img1.jpg" alt="Elaine">
+				<div class="hover-text">Elaine</div>
+			</div>
+			<div class="image-container">
+				<img src="images/pets/img2.jpg" alt="Phoebe">
+				<div class="hover-text">Phoebe</div>
+			</div>
+			<div class="image-container">
+				<img src="images/pets/img3.jpg" alt="Tom & Dave">
+				<div class="hover-text">Tom & Dave</div>
+			</div>
+			<div class="image-container">
+				<img src="images/pets/img4.jpg" alt="Thorin">
+				<div class="hover-text">Thorin</div>
+			</div>
+		</div>
+	</div>
+	
+	<div style="background-color: #f9f9f9; width: 100%; padding: 20px 0;">
+	<div style="display: flex; align-items: center; justify-content: center; gap: 50px;">
+		<img src="images/prezkitty.png" alt="Prez Kitty" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+		  
+		  <h2 style="margin: 0;">
+			<div>
+				<a href="https://www.whitehousehistory.org/here-kitty-kitty" target="_blank" style="color: #34425D; text-decoration: none;">
+				Presidential Kitties 
+				</a>
+			&nbsp;|&nbsp;
+				<a href="https://www.whitehousehistory.org/presidential-pooches" target="_blank" style="color: #34425D; text-decoration: none;">
+			  Presidential Pooches
+				</a>
+			</div>
+		  </h2>
+
+		 <img src="images/prezkitty.png" alt="Prez Kitty" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+	</div>
+	</div>
+
+</body>
+</html>
