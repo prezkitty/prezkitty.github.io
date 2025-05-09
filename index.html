@@ -22,9 +22,11 @@
         /* Banner Container */
 		#banner {
 			width: 100%;
-			height: 100vh; /* Full viewport height */
-			position: relative; /* Allows absolute positioning inside */
-			overflow: hidden;
+			min-height: 100vh; /* Full viewport height */
+			display: flex;
+			justify-content: center; /* horizontal centering */
+			align-items: center;     /* vertical centering */
+			padding: 40px 20px; /* prevents text from touching screen edges */
 			background-image: url(images/prezkitty.png); /* Repeat the background */
 			background-size: 500px 600px; /* Set repeat tile size */
 			background-repeat: repeat; /* Repeat horizontally and vertically */
@@ -34,18 +36,15 @@
 
         /* Text Overlay */
         .overlay-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Centers the text */
-            color: white;
-            text-align: center;
-            padding: 30px;
-            background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
-            border-radius: 10px;
+			background-color: rgba(0, 0, 0, 0.75);
+			color: white;
+			text-align: center;
+			padding: 30px;
+			border-radius: 10px;
 			font-size: 1.25rem;
 			line-height: 1.2;
-			width: 62%;
+			max-width: 800px;
+			width: 100%;
         }
 
 		.large-text {
@@ -83,20 +82,22 @@
 		/* Container for the banner */
 	    .image-banner {
             display: flex;
+			flex-wrap: wrap; /* allow wrapping on small screens */
             justify-content: center; /* Centers images */
-            align-items: center;
-            gap: 10px; /* Space between images */
             padding: 10px;
             background-color: #34425D; /* Optional background color */
         }
 
         /* Image styling */
         .image-banner img {
-            width: 300px; /* Set fixed width */
-            height: 300px; /* Set fixed height */
+            width: 250px;
+            height: 250px;
             object-fit: cover; /* Ensures the image fills the area without distortion */
             border-radius: 5px; /* Optional rounded corners */
+			margin: 5px; /* Adds space above and below the images */
         }
+		
+
 		
 		/* Ensure the image-container is positioned correctly */
 		.image-container {
@@ -123,6 +124,45 @@
         .image-container:hover .hover-text {
             opacity: 1;
         }
+		
+		/* Mobile Responsiveness */
+        @media (max-width: 750px) {
+            .overlay-text {
+                width: 90%;
+                font-size: 1rem;
+                padding: 20px;
+            }
+
+            .overlay-text h1 {
+                font-size: 2rem;
+            }
+
+            .body-content {
+                padding: 20px;
+            }
+
+            .body-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .body-content h3 {
+                font-size: 1.25rem;
+            }
+
+            .body-content p {
+                font-size: 1rem;
+            }
+
+            .image-banner {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .image-banner img {
+				width: 45vw;  /* roughly half the screen width */
+				height: 45vw; /* keep square shape */
+            }
+        }
     </style>
 </head>
 <body>
@@ -146,13 +186,13 @@
     </div>
 	
 	<div class="body-content" style="text-align: center;">
-	  <h2>Meow</h2> 
-	  <div class="image-container" >
-		<a href="https://www.youtube.com/watch?v=AooM9y1sANw" target="_blank">
-		  <img src="images/cathat.png" alt="A presidential cat wearing a wizard hat sitting next to a pumpkin." style="width: 300px; height: auto;">
-		  <div class="hover-text">Click to Play with Kitty!</div>
-		</a>
-	  </div>
+		<h2>Meow</h2> 
+			<div class="image-container" >
+				<a href="https://www.youtube.com/watch?v=AooM9y1sANw" target="_blank">
+				<img src="images/cathat.png" alt="A presidential cat wearing a wizard hat sitting next to a pumpkin." style="width: 300px; height: auto; border-radius: 5px">
+				<div class="hover-text">Click to Play with Kitty!</div>
+				</a>
+		</div>
 	</div>
 	
 	<div class="body-content">
@@ -177,23 +217,17 @@
 		</div>
 	</div>
 	
-	<div style="background-color: #f9f9f9; width: 100%; padding: 20px 0;">
-	<div style="display: flex; align-items: center; justify-content: center; gap: 50px;">
+	<div style="background-color: #f9f9f9; width: 100%; padding: 20px;">
+	<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 50px;">
 		<img src="images/prezkitty.png" alt="Prez Kitty" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
-		  
-		  <h2 style="margin: 0;">
-			<div>
-				<a href="https://www.whitehousehistory.org/here-kitty-kitty" target="_blank" style="color: #34425D; text-decoration: none;">
-				Presidential Kitties 
-				</a>
-			&nbsp;|&nbsp;
-				<a href="https://www.whitehousehistory.org/presidential-pooches" target="_blank" style="color: #34425D; text-decoration: none;">
-			  Presidential Pooches
-				</a>
-			</div>
-		  </h2>
-
-		 <img src="images/prezkitty.png" alt="Prez Kitty" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+		
+		<h2 style="font-size: 1.5rem; margin-bottom: 20px; margin: 0; display: flex; gap: 10px; align-items: center;">
+			<a href="https://www.whitehousehistory.org/here-kitty-kitty" target="_blank" style="color: #34425D; text-decoration: none; margin: 2px">Presidential Kitties</a>
+			<span style="color: #34425D;">|</span>
+			<a href="https://www.whitehousehistory.org/presidential-pooches" target="_blank" style="color: #34425D; text-decoration: none;"> Presidential Pooches</a>
+		</h2>
+		
+		<img src="images/prezkitty.png" alt="Prez Kitty" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
 	</div>
 	</div>
 
